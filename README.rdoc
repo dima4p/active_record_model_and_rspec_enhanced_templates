@@ -1,6 +1,10 @@
 = active_record_model_and_rspec_enhanced_templates
 
-Description goes here.
+ActiveRecord generator and RSpec templates that add some basic functionality to the model and its spec.
+
+* Model gets scope :sorted
+* RSpec checks the validity of the model instance if it is properly generated
+* RSpec checks the scope :sorted
 
 == Contributing to active_record_model_and_rspec_enhanced_templates
  
@@ -14,6 +18,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2014 Dmitri Koulikoff (acer). See LICENSE.txt for
+Copyright (c) 2014 Dmitri Koulikoff. See LICENSE.txt for
 further details.
 

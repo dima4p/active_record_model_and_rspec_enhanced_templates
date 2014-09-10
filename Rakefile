@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "active_record_model_and_rspec_enhanced_templates"
   gem.homepage = "http://github.com/dima4p/active_record_model_and_rspec_enhanced_templates"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{ActiveRecord generator and RSpec templates that add some basic functionality}
+  gem.description = %Q{ActiveRecord generator and RSpec templates that add some basic functionality to the model and its spec}
   gem.email = "dima@koulikoff.ru"
-  gem.authors = ["Dmitri Koulikoff (acer)"]
+  gem.authors = ["Dmitri Koulikoff"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
