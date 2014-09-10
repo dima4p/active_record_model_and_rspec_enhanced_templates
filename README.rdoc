@@ -6,6 +6,26 @@ ActiveRecord generator and RSpec templates that add some basic functionality to 
 * RSpec checks the validity of the model instance if it is properly generated
 * RSpec checks the scope :sorted
 
+== Installation
+
+Add to your Gemfile
+
+  gem 'active_record_model_and_rspec_enhanced_templates'
+
+Then bundle as usual.
+
+== Usage
+
+Next time you run
+
+  rails generate model SomeModel ...
+
+or
+
+  rails generate scaffold SomeModel ...
+
+you will get the model and the specs with the named functionalities.
+
 == Contributing to active_record_model_and_rspec_enhanced_templates
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
