@@ -1,4 +1,8 @@
+<% if File.exist?(File.join %w[spec rails_helper.rb]) -%>
+require 'rails_helper'
+<% else -%>
 require 'spec_helper'
+<% end -%>
 
 <% module_namespacing do -%>
 describe <%= class_name %>, type: :model do
