@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 <% module_namespacing do -%>
-describe <%= class_name %> do
+describe <%= class_name %>, type: :model do
 
 <% if options[:fixture_replacement] == :factory_girl -%>
   subject { create :<%= singular_name %> }
