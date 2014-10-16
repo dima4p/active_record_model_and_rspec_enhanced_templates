@@ -7,10 +7,10 @@ class <%= class_name %> < <%= parent_class_name.classify %>
 <% if attributes.any?(&:password_digest?) -%>
   has_secure_password
 <% end -%>
-<% attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
-<% if attribute -%>
-  scope :ordered, -> { order(:<%=attribute.name %>) }
-<% end -%>
+<% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
 
+  scope :ordered, -> { order(:<%=attribute.name %>) }
+
+<% end -%>
 end
 <% end -%>

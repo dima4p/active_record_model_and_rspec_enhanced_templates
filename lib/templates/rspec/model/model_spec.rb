@@ -20,6 +20,7 @@ describe <%= class_name %>, type: :model do
 
   it { should be_valid }
 
+<% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
   describe :class do
     it 'should respond to :ordered' do
 <% if options[:fixture_replacement] == :factory_girl -%>
@@ -29,10 +30,10 @@ describe <%= class_name %>, type: :model do
       <%= class_name %>.create @valid_attrs
       <%= class_name %>.create @valid_attrs
 <% end -%>
-<% attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
       expect(<%= class_name %>.ordered).to eq <%= class_name %>.order(:<%=attribute.name %>)
     end
   end
 
+<% end -%>
 end
 <% end -%>
