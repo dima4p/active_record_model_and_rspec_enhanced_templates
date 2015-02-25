@@ -1,3 +1,5 @@
+# Model <%= class_name %> defines ... TODO:
+#
 <% module_namespacing do -%>
 class <%= class_name %> < <%= parent_class_name.classify %>
 
