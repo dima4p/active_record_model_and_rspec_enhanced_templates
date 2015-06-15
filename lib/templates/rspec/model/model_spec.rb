@@ -22,15 +22,19 @@ describe <%= class_name %>, type: :model do
 
 <% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
   describe :class do
-    it 'should respond to :ordered' do
+    describe :scope do
+      describe '.ordered' do
+        it 'sort <%= class_name %> by :ordered' do
 <% if options[:fixture_replacement] == :factory_girl -%>
-      create :<%= singular_name %>
-      create :<%= singular_name %>
+          create :<%= singular_name %>
+          create :<%= singular_name %>
 <% else -%>
-      <%= class_name %>.create @valid_attrs
-      <%= class_name %>.create @valid_attrs
+          <%= class_name %>.create @valid_attrs
+          <%= class_name %>.create @valid_attrs
 <% end -%>
-      expect(<%= class_name %>.ordered).to eq <%= class_name %>.order(:<%=attribute.name %>)
+          expect(<%= class_name %>.ordered).to eq <%= class_name %>.order(:<%=attribute.name %>)
+        end
+      end
     end
   end
 
