@@ -21,8 +21,8 @@ describe <%= class_name %>, type: :model do
   it { should be_valid }
 
 <% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
-  describe :class do
-    describe :scopes do
+  describe 'class methods' do
+    describe 'scopes' do
       describe '.ordered' do
         it 'orders the records of <%= class_name %> by :<%=attribute.name %>' do
 <% if options[:fixture_replacement] == :factory_girl -%>
@@ -36,7 +36,7 @@ describe <%= class_name %>, type: :model do
         end
       end   # .ordered
     end   # scopes
-  end   # class
+  end   # class methods
 
 <% end -%>
 end
