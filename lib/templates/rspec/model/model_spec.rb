@@ -18,7 +18,9 @@ describe <%= class_name %>, type: :model do
   subject { <%= class_name %>.create @valid_attrs }
 <% end -%>
 
-  it { should be_valid }
+  describe 'validatins' do
+    it { should be_valid }
+  end   # validatins
 
 <% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
   describe 'class methods' do
