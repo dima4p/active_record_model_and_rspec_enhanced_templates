@@ -8,7 +8,7 @@ class <%= class_name %> < <%= parent_class_name.classify %>
   belongs_to :<%= attribute.name %><%= ', polymorphic: true' if attribute.polymorphic? %><%= ', required: true' if attribute.required? %>
 <% end -%>
 <% end -%>
-<% if attributes.any?(&:token?) -%>
+<% if attributes.first.respond_to?(:token) and attributes.any?(&:token?) -%>
 
 <% attributes.select(&:token?).each do |attribute| -%>
   has_secure_token<% if attribute.name != "token" %> :<%= attribute.name %><% end %>

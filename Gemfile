@@ -6,6 +6,7 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
+  gem 'rake', '~> 11.0'
   gem "rspec", "~> 3.1"
   gem "rdoc", "~> 4.1"
   gem "bundler", "~> 1.6"
