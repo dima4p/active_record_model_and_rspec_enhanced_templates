@@ -21,6 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{ActiveRecord generator and RSpec templates that add some basic functionality to the model and its spec}
   gem.email = "dima@koulikoff.ru"
   gem.authors = ["Dmitri Koulikoff"]
+  gem.version = File.exist?('VERSION') ? File.read('VERSION') : ""
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

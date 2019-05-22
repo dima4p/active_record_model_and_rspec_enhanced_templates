@@ -7,7 +7,7 @@ require 'spec_helper'
 <% module_namespacing do -%>
 describe <%= class_name %>, type: :model do
 
-<% if options[:fixture_replacement] == :factory_girl -%>
+<% if options[:fixture_replacement] == :factory_bot -%>
   subject { create :<%= singular_name %> }
 <% else -%>
   before :each do
@@ -27,7 +27,7 @@ describe <%= class_name %>, type: :model do
     describe 'scopes' do
       describe '.ordered' do
         it 'orders the records of <%= class_name %> by :<%=attribute.name %>' do
-<% if options[:fixture_replacement] == :factory_girl -%>
+<% if options[:fixture_replacement] == :factory_bot -%>
           create :<%= singular_name %>
           create :<%= singular_name %>
 <% else -%>
