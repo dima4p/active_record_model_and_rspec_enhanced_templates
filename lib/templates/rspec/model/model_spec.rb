@@ -8,7 +8,7 @@ require 'spec_helper'
 describe <%= class_name %>, type: :model do
 
 <% if options[:fixture_replacement] == :factory_bot -%>
-  subject { create :<%= singular_name %> }
+  subject(:<%= singular_name %>) { create :<%= singular_name %> }
 <% else -%>
   before :each do
     @valid_attrs = {
