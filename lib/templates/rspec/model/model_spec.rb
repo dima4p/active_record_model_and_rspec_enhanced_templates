@@ -19,7 +19,7 @@ describe <%= class_name %>, type: :model do
 <% end -%>
 
   describe 'validations' do
-    it { should be_valid }
+    it { is_expected.to be_valid }
   end   # validations
 
 <% if attribute = attributes.detect{|a| a.name == 'position'} || attributes.detect{|a| a.name == 'name'} || attributes.detect{|a| a.name == 'title'} || attributes.first -%>
@@ -27,13 +27,6 @@ describe <%= class_name %>, type: :model do
     describe 'scopes' do
       describe '.ordered' do
         it 'orders the records of <%= class_name %> by :<%=attribute.name %>' do
-<% if options[:fixture_replacement] == :factory_bot -%>
-          create :<%= singular_name %>
-          create :<%= singular_name %>
-<% else -%>
-          <%= class_name %>.create @valid_attrs
-          <%= class_name %>.create @valid_attrs
-<% end -%>
           expect(<%= class_name %>.ordered).to eq <%= class_name %>.order(:<%=attribute.name %>)
         end
       end   # .ordered
